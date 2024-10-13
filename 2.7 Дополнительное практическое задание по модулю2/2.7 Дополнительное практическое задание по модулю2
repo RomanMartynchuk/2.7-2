@@ -1,0 +1,13 @@
+import random
+from itertools import count
+all_numbers = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+task = random.choice(all_numbers)
+print("число из первой вставки:", task)
+para = []
+for i in range(1,task+1):
+    for j in range(2,task+1):
+        summ = i + j
+        if task % summ == 0 and j > i:
+            para.append(i)
+            para.append(j)
+print("нужный пароль:", *para)
